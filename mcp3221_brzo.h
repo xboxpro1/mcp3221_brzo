@@ -16,4 +16,37 @@
   You should have received a copy of the GNU General Public
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  
+  MCP3221 Address
+  A0	0x48
+  A1	0x49
+  A2	0x4A
+  A3	0x4B
+  A4	0x4C
+  A5	0x4D
+  A6	0x4E
+  A7	0x4F
+  
+  MCP3221 SCL frequency 100kHz Standard Mode, 400kHz Fast Mode
 */
+
+#ifndef mcp3221_brzo_h
+#define mcp3221_brzo_h
+
+#include <stdint.h>
+#include "brzo_i2c.h"
+
+class MCP3221_BRZO {
+	
+public:
+  MCP3221_BRZO(uint8_t mcp_Addr, int vin_Ref);
+  
+  int readADC(void);
+  float calcMV(void);
+  
+private:
+  uint8_t _mcpAddr;
+  int _vinRef;          //Vin of the MCP3221 in Millivolts
+};
+
+#endif
