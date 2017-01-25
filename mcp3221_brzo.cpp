@@ -36,7 +36,7 @@
 
 uint8_t scl_speed = 400; //MCP3221 SCL frequency 400kHz - Fast Mode
 
-MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, int vin_Ref) {
+MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref) {
   _mcpAddr = mcp_Addr;
   _vinRef = vin_Ref;
 }
