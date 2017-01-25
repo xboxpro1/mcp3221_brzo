@@ -29,3 +29,13 @@
   
   MCP3221 SCL frequency 100kHz Standard Mode, 400kHz Fast Mode
 */
+
+#include <stdint.h>
+#include "brzo_i2c.h"
+#include "mcp3221_brzo.h"
+
+MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, int vin_Ref) {
+  _mcpAddr = mcp_Addr;
+  _vinRef = vin_Ref;
+}
+
