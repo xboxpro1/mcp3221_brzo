@@ -16,4 +16,16 @@
   You should have received a copy of the GNU General Public
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  
+  MCP3221 Address
+  A0	0x48
+  A1	0x49
+  A2	0x4A
+  A3	0x4B
+  A4	0x4C
+  A5	0x4D
+  A6	0x4E
+  A7	0x4F
+  
+  MCP3221 SCL frequency 100kHz Standard Mode, 400kHz Fast Mode
 */
