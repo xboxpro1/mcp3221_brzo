@@ -42,6 +42,7 @@ MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref) {
 }
 
 uint8_t MCP3221_BRZO::readADC(uint16_t *adc){
+  uint16_t _adc = 0;
   uint8_t _ecode;
   uint8_t _buffer[2];
   
@@ -50,11 +51,12 @@ uint8_t MCP3221_BRZO::readADC(uint16_t *adc){
   _ecode = brzo_i2c_end_transaction();
   
   if(_ecode == 0){
-    *adc = (buffer[0] << 8) | buffer[1];
+    _adc = (buffer[0] << 8) | buffer[1];
   }
   else{
-    *adc = 0;
+    _adc = 0;
   }
+  *adc = _adc;
   return _ecode;
 }
 
