@@ -1,7 +1,7 @@
 /*
 readadc.ino
-Example for Microchip MCP3221 A/D Converter using the TC74_I2C_BRZO library
-The sketch reads the MCP3221 via BRZO_I2C and outputs the data to the serial port
+Example for Microchip MCP3221 A/D Converter using the MCP3221 BRZO library
+The sketch reads the MCP3221 via BRZO I2C and outputs the data to the serial port
 Created Jan 2017
 By Martin S		https://github.com/xboxpro1/mcp3221_brzo
 */
