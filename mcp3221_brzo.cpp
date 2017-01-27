@@ -51,7 +51,7 @@ uint8_t MCP3221_BRZO::readADC(uint16_t *adc){
   _ecode = brzo_i2c_end_transaction();
   
   if(_ecode == 0){
-    *adc = (buffer[0] << 8) | buffer[1];
+    *adc = (_buffer[0] << 8) | _buffer[1];
   }
   return _ecode;
 }
