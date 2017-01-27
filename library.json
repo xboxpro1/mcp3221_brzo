@@ -1,0 +1,27 @@
+{
+  "name": "MCP3221 BRZO",
+  "version": "1.0.0",
+  "keywords": "ESP8266, I2C, MCP3221",
+  "description": "ESP8266 library for the I2C controlled MCP3221 A/D Converter, uses the BRZO I2C library",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/xboxpro1/mcp3221_brzo.git"
+  },
+  "dependencies":
+  {
+    "name": "Brzo I2C",
+    "authors": "Pascal Kurtansky",
+    "frameworks": "arduino"
+  },
+  "authors":
+  [
+    {
+        "name": "Martin Stahl",
+        "email": "xboxpro1@gmail.com"
+        "url": "https://github.com/xboxpro1"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif"
+}
