@@ -8,7 +8,7 @@ This library uses the BRZO I2C library for the ESP8266.
 ###MCP3221 Info
 - Power supply range of 2.7V to 5.5V.
 - Resolution is 12 Bit.
-- I2C Clock Frequency 100kHz normal mode and 400kHz fast mode.
+- I2C Clock Frequency 100kHz standard mode and 400kHz fast mode.
 
 
 ###MCP3221 Addresses
