@@ -1,4 +1,4 @@
-# TC74 BRZO
+# MCP3221 BRZO
 
 ESP8266 library for the I2C controlled MCP3221 A/D Converter.
 
