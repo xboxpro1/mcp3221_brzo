@@ -41,8 +41,8 @@ class MCP3221_BRZO {
 public:
   MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref);
   
-  uint8_t readADC(uint16_t *adc);
-  uint8_t calcMV(float *mv);
+  uint8_t readADC(uint16_t &adc);
+  uint8_t calcMV(float &mv);
   
 private:
   uint8_t _mcpAddr;
