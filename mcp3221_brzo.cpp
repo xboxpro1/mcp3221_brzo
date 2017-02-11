@@ -41,30 +41,30 @@ MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref) {
   _vinRef = vin_Ref;
 }
 
-uint8_t MCP3221_BRZO::readADC(uint16_t *adc){
+uint8_t MCP3221_BRZO::readADC(uint16_t &adc){
   uint8_t _ecode;
   uint8_t _buffer[2];
-  *adc = 0;
+  adc = 0;
   
   brzo_i2c_start_transaction(_mcpAddr, scl_speed);
   brzo_i2c_read(_buffer, 2, false);
   _ecode = brzo_i2c_end_transaction();
   
   if(_ecode == 0){
-    *adc = (_buffer[0] << 8) | _buffer[1];
+    adc = (_buffer[0] << 8) | _buffer[1];
   }
   return _ecode;
 }
 
-uint8_t MCP3221_BRZO::calcMV(float *mv);{
+uint8_t MCP3221_BRZO::calcMV(float &mv);{
   uint16_t _adc;
   uint8_t _ecode;
-  *mv = 0;
+  mv = 0;
   
   _ecode = readADC(_adc);
   
   if(_ecode == 0){
-    *mv = ((_adc / 4095)*_vinRef);        //MCP3221 is 12bit a full range of 4095
+    mv = ((_adc / 4095)*_vinRef);        //MCP3221 is 12bit a full range of 4095
   }
   
   return _ecode;
