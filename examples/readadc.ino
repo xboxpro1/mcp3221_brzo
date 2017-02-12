@@ -26,7 +26,7 @@ void setup(){
    delay(1000);
    Serial.print ("Get MCP3221 ADC raw data.... ");	
    errorcode = adc.readADC(rawdata);              // read ADC raw data
-   if(errorcode == 0) then {
+   if(errorcode == 0){
      Serial.println (rawdata);
      Serial.println ("OK");
      initok = true;
