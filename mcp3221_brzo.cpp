@@ -56,7 +56,7 @@ uint8_t MCP3221_BRZO::readADC(uint16_t &adc){
   return _ecode;
 }
 
-uint8_t MCP3221_BRZO::calcMV(float &mv);{
+uint8_t MCP3221_BRZO::calcMV(float &mv){
   uint16_t _adc;
   uint8_t _ecode;
   mv = 0;
