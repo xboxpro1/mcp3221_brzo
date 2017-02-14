@@ -65,7 +65,7 @@ uint8_t MCP3221_BRZO::calcMV(uint16_t &mv){
   _ecode = readADC(_adc);
   
   if(_ecode == 0){
-    _mv = ((_adc / 4095.00)*_vinRef);        //MCP3221 is 12bit a full range of 4095
+    _mv = ((_adc / 4095.00) * _vinRef);        //MCP3221 is 12bit a full range of 4095
     mv = round((_mv * 2)) / 2;
   }
   
