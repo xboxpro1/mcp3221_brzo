@@ -23,14 +23,14 @@ This library uses the BRZO I2C library for the ESP8266.
   
 ###Driver API
 **MCP3221_BRZO adc(address, vinRef)**
-Init the temperature sensor with the given address, and sets the Vin Ref to calculate the Analog Data to Millivolt.
+Init the temperature sensor with the given address, and sets the VinRef to calculate the raw data to millivolt.
 
-**readADC(int16_t)**
-Read the raw data as int16_t. Returns the brzo_i2c error code.
+**readADC(uint16_t)**
+Read the raw data as uint16_t. Returns the brzo_i2c error code.
 Brzo_i2c error codes see [README](https://github.com/pasko-zh/brzo_i2c/blob/master/README.md)
 
-**calcMV(float)**
-Calculate the Analog Data to Millivolt to the base Vin Ref in float. Returns the brzo_i2c error code.
+**calcMV(uint16_t)**
+Calculate the raw data to millivolt to the base VinRef as uint16_t. Returns the brzo_i2c error code.
 
 
 Created for Arduino IDE and PlatformIO.
