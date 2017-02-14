@@ -34,7 +34,7 @@
 #include "brzo_i2c.h"
 #include "mcp3221_brzo.h"
 
-uint8_t scl_speed = 100; //MCP3221 SCL frequency 100kHz - Standard Mode
+#define scl_speed   100          //MCP3221 SCL frequency 100kHz - Standard Mode
 
 MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref) {
   _mcpAddr = mcp_Addr;
