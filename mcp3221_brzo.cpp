@@ -56,15 +56,17 @@ uint8_t MCP3221_BRZO::readADC(uint16_t &adc){
   return _ecode;
 }
 
-uint8_t MCP3221_BRZO::calcMV(float &mv){
+uint8_t MCP3221_BRZO::calcMV(uint16_t &mv){
   uint16_t _adc;
   uint8_t _ecode;
+  float _mv;
   mv = 0;
   
   _ecode = readADC(_adc);
   
   if(_ecode == 0){
-    mv = ((_adc / 4095)*_vinRef);        //MCP3221 is 12bit a full range of 4095
+    _mv = ((_adc / 4095.00)*_vinRef);        //MCP3221 is 12bit a full range of 4095
+    mv = round((_mv * 2)) / 2;
   }
   
   return _ecode;
