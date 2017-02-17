@@ -35,6 +35,7 @@
 #include "mcp3221_brzo.h"
 
 #define scl_speed   100          //MCP3221 SCL frequency 100kHz - Standard Mode
+#define mv_samples   10          //Millivolt sample times
 
 MCP3221_BRZO::MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref) {
   _mcpAddr = mcp_Addr;
@@ -78,12 +79,12 @@ uint8_t MCP3221_BRZO::calcAVG(uint16_t &av){
   uint8_t _ecode = 0;
   av = 0;
   
-  for (i = 0; i<10; i++){
+  for (i = 0; i<mv_samples; i++){
       _ecode += calcMV(_mv);
       _sumavg += _mv;
   }
   if(_ecode == 0){
-      av = round((_sumavg / 10));
+      av = round((_sumavg / mv_samples));
   }
   
   return _ecode;
