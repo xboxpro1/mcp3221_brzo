@@ -74,7 +74,7 @@ uint8_t MCP3221_BRZO::calcMV(uint16_t &mv){
 }
 
 uint8_t MCP3221_BRZO::calcAVG(uint16_t &av){
-  uint16_t _sumavg = 0;
+  uint32_t _sumavg = 0;
   uint16_t _mv;
   uint8_t _ecode = 0;
   av = 0;
