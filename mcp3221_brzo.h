@@ -42,8 +42,9 @@ public:
   MCP3221_BRZO(uint8_t mcp_Addr, uint16_t vin_Ref);
   
   uint8_t readADC(uint16_t &adc);
-  uint8_t calcMV(uint16_t &mv);
-  
+  uint8_t calcMV(uint16_t &mv);	
+  uint8_t calcAVG(uint16_t &av);
+	
 private:
   uint8_t _mcpAddr;
   uint16_t _vinRef;          //Vin of the MCP3221 in Millivolts
